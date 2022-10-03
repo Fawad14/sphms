@@ -8,7 +8,7 @@ Created on Sun Oct  2 02:53:12 2022
 from pydantic import BaseModel
 # 2. Class which describes Bank Notes measurements
 class Maintenance(BaseModel):
-    TEMPERATURE: float 
+    TEMPRATURE: float 
     VOLTAGE: float 
     current: float 
     POWER: float
