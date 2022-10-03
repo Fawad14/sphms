@@ -34,7 +34,7 @@ def get_name(name: str):
 @app.post('/predict')
 def predict_maintenance(data:Maintenance):
     data = data.dict()
-    Temperature=data['TEMPERATURE']
+    Temperature=data['TEMPRATURE']
     Voltage=data['VOLTAGE']
     Current=data['current']
     Power=data['POWER']
@@ -42,10 +42,10 @@ def predict_maintenance(data:Maintenance):
    # print(classifier.predict([[variance,skewness,curtosis,entropy]]))
     prediction = classifier.predict([[Temperature,Voltage,Current,Power,Hour]])
     if(prediction[0]>0.5):
-            prediction="Working Efficiently"
+            prediction="Not Working Efficiently"
           
     else:
-            prediction="Not Working Efficiently"
+            prediction="Working Efficiently"
        
     return {
         'prediction': prediction
